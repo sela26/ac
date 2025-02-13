@@ -1,6 +1,5 @@
 import streamlit as st
-from streamlit_theme import \
-    st_theme  # external component: https://discuss.streamlit.io/t/new-component-st-theme-it-returns-the-active-theme-of-the-streamlit-app/64424
+from streamlit_theme import st_theme  # external component: https://discuss.streamlit.io/t/new-component-st-theme-it-returns-the-active-theme-of-the-streamlit-app/64424
 from about import about_page
 from resources import resources_page
 from my_cycle_chatbot import my_cycle_page
