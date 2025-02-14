@@ -84,7 +84,7 @@ def resources_page():
 
     # Luteal Expander
     with tab4:
-        st.write(f"This is where you’re more likely to start losing steam. you might also notice "
+        st.write(f"This is where you’re more likely to start losing steam. You might also notice "
                  f"that it takes you longer to recover from an intense workout. Plus, PMS symptoms, "
                  f"like breast pain or cramps, can make certain types of exercise uncomfortable. "
                  f"The luteal phase can also have a **greater effect on mental health**, especially if "
