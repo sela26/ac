@@ -16,7 +16,7 @@ def resources_page():
                 "functions, find it here. Have fun and explore. ")
     #st.divider()
 
-    tab1, tab2, tab3, tab4 = st.tabs(["Menstrual phase", "Follicular Phase", "Ovulation Phase", "Luteal Phase"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Menstrual Phase", "Follicular Phase", "Ovulation Phase", "Luteal Phase"])
 
     # Menstrual Expander
     #    with st.expander("Menstrual Phase"):
