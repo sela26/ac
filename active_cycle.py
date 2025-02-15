@@ -29,7 +29,7 @@ def home_page():
     # set title
     st.title("Welcome to Active Cycle!")
     st.divider()
-    st.write("**Hey, good to see you!**")
+    st.subheader("Hey, good to see you!")
     st.write("Active Cycle is designed to help you sync your workouts with your menstrual cycle, "
                 "offering personalized recommendations based on your current phase. Whether you’re "
                 "full of energy or in need of a slower pace, we’ve got you covered. ")
