@@ -3,14 +3,14 @@ from streamlit_theme import \
     st_theme
 
 def about_page():
+    # title banner, light and dark mode
     theme = st_theme()
     if theme["base"] == "light":
         st.image("images/light_about.png")
 
     else:
         st.image("images/about.png")
-    # set title
-    # st.title("ABOUT")
+        
     st.write("Find out about our purpose and ethics.")
     st.write("Please notice the disclaimer for optimal and safe use of *Active Cycle*.")
     st.divider()
