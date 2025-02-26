@@ -15,7 +15,7 @@ st.set_page_config(
 
 
 def home_page():
-    # banner
+    # title banner
     # used external component:
     # https://discuss.streamlit.io/t/new-component-st-theme-it-returns-the-active-theme-of-the-streamlit-app/64424
     theme = st_theme()
