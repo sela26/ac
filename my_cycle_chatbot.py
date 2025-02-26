@@ -3,12 +3,7 @@ import random
 from streamlit_theme import \
     st_theme
 
-
-# st.chat_message("user" / "ai" ) -- changes the icons of who is talking to you!
-# play around with buttons
-# organizing, putting flows togteher will be the most difficult about this. invest time!
-# life path number - cycle information
-
+# code to figure out cycle phase
 def figure_out(day):
     if day is None:
         return "Please enter a valid day"
@@ -25,22 +20,26 @@ def figure_out(day):
 
 
 def my_cycle_page():
+    # title banner, light / dark mode
     theme = st_theme()
     if theme["base"] == "light":
         st.image("images/light_my_cycle.png")
-
     else:
         st.image("images/my_cycle.png")
-    # st.title("MY CYCLE")
+
+    # info text
     st.write(f"Understanding your body can make all the difference. "
              f"Do you want to know what’s happening **right now**, **inside you**? "
              f"Explore your menstrual cycle, get personalized workout suggestions, "
              f"and **improve your well-being**. "
              f"Let’s make information and self-care simple, natural, and stigma-free. ")
     st.write(f"And most importantly: **Listen to your body.**")
+    
     st.divider()
+
+    # chatbot
     with st.chat_message("user"):
-        st.write("Hello Human! ☺️ "
+        st.write("Hello User! ☺️ "
                  "Let me help you identify your cycle.")
         st.session_state.name = st.text_input("What's your name?",
                                                   value=None)
@@ -55,6 +54,7 @@ def my_cycle_page():
                 st.info("Please note that Cycle lengths can vary, and many factors can affect your menstrual cycle.")
 
                 with st.expander(f"Tell me more about the {phase}!"):
+                    
                     if phase == "menstrual phase":
                         st.write(f"Estrogen and progesterone are at their lowest, and your body "
                                  f"is busy shedding your uterine lining. It’s not uncommon to feel "
@@ -65,12 +65,14 @@ def my_cycle_page():
                                  f"related pain or fatigue, **there’s no need to “push through”**! Your "
                                  f"menstrual flow can also affect which types of exercise feel most comfortable."
                                  )
+                    
                     elif phase == "follicular phase":
                         st.write(f"As estrogen and progesterone start to increase, you may "
                                  f"find yourself regaining energy. This can be a good time "
                                  f"to focus on **endurance or resistance training**. Going for "
                                  f"**a hike** or **brisk walk** may **feel especially good in this phase**. "
                                  f"The same goes for **weight training**.")
+                    
                     elif phase == "ovulation phase":
                         st.write(f"thanks to the LH surge, you may feel extra "
                                  f"alert and ready to move. you might find that  "
@@ -79,6 +81,7 @@ def my_cycle_page():
                                  f"however, some might experience abdominal pain "
                                  f"during ovulation, so don’t hesitate to take it easy "
                                  f"as needed.")
+                    
                     elif phase == "luteal phase":
                         st.write(f"this is where you’re more likely to start losing steam. you might also notice "
                                  f"that it takes you longer to recover from an intense workout. plus, PMS symptoms, "
@@ -92,18 +95,21 @@ def my_cycle_page():
 
                 with st.expander(f"Show me today's workout recommendation."):
                     st.write("If you feel like it, today's workout can look like this:")
+                    
                     if phase == "menstrual phase":
+                        
                         # creating a list from which a video can be chosen from randomly
-                        ## rahmen anpassen dass es perfekt passt - geht nicht?
                         menstrual_pool = [
                             "https://www.youtube.com/watch?v=VaVIvmQx_Xw",
                             "https://www.youtube.com/watch?v=1bVwzw7m0XM",
                             "https://www.youtube.com/watch?v=vCytq0eygo8&t=29s",
                             "https://www.youtube.com/watch?v=WPBi5cgmsL0"
                         ]
-                        # order: received help from DM Lab
                         menstrual_workout = random.choice(menstrual_pool)
+
+                        # displaying the video
                         st.video(menstrual_workout)
+                    
                     elif phase == "follicular phase":
                         follicular_pool = [
                             "https://www.youtube.com/watch?v=aBtP7008EfA",
@@ -113,6 +119,7 @@ def my_cycle_page():
                         ]
                         follicular_workout = random.choice(follicular_pool)
                         st.video(follicular_workout)
+                    
                     elif phase == "ovulation phase":
                         ovulation_pool = [
                             "https://www.youtube.com/watch?v=2xNcUjKLZto",
@@ -122,6 +129,7 @@ def my_cycle_page():
                         ]
                         ovulation_workout = random.choice(ovulation_pool)
                         st.video(ovulation_workout)
+                    
                     elif phase == "luteal phase":
                         luteal_pool = [
                             "https://www.youtube.com/watch?v=40bPxbFUCj4",
