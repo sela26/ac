@@ -60,6 +60,9 @@ def get_active_page():
     st.write(
         "With DON-AID every donation can make a change. Comment on personal stories of women in war zones, fund "
         "teaching possibilities in war zones and donate sanitary products.")
+    st.markdown(
+        "[Try DON-AID]"
+        "(https://don-aid.streamlit.app/)")
 
 
 
