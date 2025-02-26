@@ -3,6 +3,7 @@ from streamlit_theme import st_theme
 
 
 def resources_page():
+    # title banner, light / dark mode
     theme = st_theme()
     if theme["base"] == "light":
         st.image("images/light_resources.png")
@@ -10,16 +11,13 @@ def resources_page():
     else:
         st.image("images/resources.png")
 
-    # st.title("Resources")
     st.header("Information on different Cycle Phases")
     st.markdown("If you just need an overview on the menstrual cycle and it's "
                 "functions, find it here. Have fun and explore. ")
-    #st.divider()
 
     tab1, tab2, tab3, tab4 = st.tabs(["Menstrual Phase", "Follicular Phase", "Ovulation Phase", "Luteal Phase"])
 
     # Menstrual Expander
-    #    with st.expander("Menstrual Phase"):
     with tab1:
         st.write(f"Estrogen and progesterone are at their lowest, and your body "
                  f"is busy shedding your uterine lining. It’s not uncommon to feel "
@@ -28,8 +26,9 @@ def resources_page():
                  f"your body is key through all stages of your cycle, it’s "
                  f"especially important during menstruation. If you experience period "
                  f"related pain or fatigue, **there’s no need to “push through”**! Your "
-                 f"menstrual flow can also affect which types of exercise feel most comfortable."
-                 )
+                 f"menstrual flow can also affect which types of exercise feel most comfortable.")
+
+        # displaying the videos
         with st.expander("These are examples for what movement could look like, during this phase:"):
             c1, c2 = st.columns(2)
             c3, c4 = st.columns(2)
@@ -105,7 +104,7 @@ def resources_page():
             with c4:
                 st.video("https://www.youtube.com/watch?v=WbuqNUoA8MM")
 
-    # create some space inbetween
+    # creating space inbetween
     st.divider()
     st.write("")
     st.header("Cycle Syncing")
@@ -119,15 +118,7 @@ def resources_page():
     st.caption("If you would like to see someone testing cycle synching - watch this! "
                "This video can give you a better idea of what a real implementation of cycle synching could look like. ")
 
-    #c1, c2 = st.columns(2)
-    #with c1:
-        #st.video("https://youtu.be/vh0fHMw7t9Q?si=0EUaUQdiGXlWCFft")
-        #st.caption("If you would like to see someone testing cycle synching - watch this!")
-    #with c2:
-        #st.text(
-            #"This video can give you a better idea of what a real implementation of cycle synching could look like. ")
-
-    # create small space
+    # creating small space
     st.write("")
     st.write("")
     st.subheader("Additional resources")
