@@ -3,7 +3,7 @@ import random
 import time
 from streamlit_theme import st_theme
 
-# st.write(st.session_state.name)
+# part of the code to transform streamlit name variable into name variable to avoid output "None"
 if 'name' in st.session_state:
     st.session_state.name = st.session_state.name
 
@@ -52,7 +52,7 @@ def selfcare_page():
                             ]
     quote_button = st.button("Discover a quote")
 
-    # AI was used to reformulate and for the last three options
+    # AI was used to rephrase and for the last three options
     selfcare_activity_pool = ["Take five deep breaths. Inhale through your nose, hold for a few seconds, and exhale slowly. It’s a small reset for your body and mind.",
                               "Put on a song you love. Whether it’s something calming or upbeat, let yourself enjoy the music. Maybe even move a little if you feel like it.",
                               "Write down three good things from today. They don’t have to be big—just anything that made the day a little better.",
